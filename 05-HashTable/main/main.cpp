@@ -1,4 +1,4 @@
-#include "include/BTreeTest.hpp"
+#include "include/HashTableTest.hpp"
 
 void SetTestMode(enum TestMode& inTestMode, int& inTestCase, enum PrintMode& inPrintMode)
 {
@@ -58,8 +58,8 @@ void SetFileAndTestName(std::string& ExeFileName, std::string& TestName, int& in
 		3) Set Time Limit
 	*/
 
-	ExeFileName = "03-BTree.exe";
-	TestName = "BTree";
+	ExeFileName = "05-HashTable.exe";
+	TestName = "HashTable";
 	inTestTimeLimit = 10000;
 }
 
@@ -68,14 +68,18 @@ void RegisterTests()
 	// Framework Check
 	RegisterTest(module, FrameworkCheck);
 
-	// BTree Check
-	RegisterTest(module, 2_4_InorderTraversal);
-	RegisterTest(module, InorderTraversal);
-	RegisterTest(module, NodeUtilization);
-	RegisterTest(module, PerfectBalance);
-	RegisterTest(module, Delete);
-	RegisterTest(module, TraversalAfterDeletion);
-	RegisterTest(module, NodeUtilizationAfterDeletion);
+	// HashTable Check
+	RegisterTest(module, SimpleTest_Linear);
+	RegisterTest(module, SimpleTest_Quad);
+	RegisterTest(module, EnlargeInsert_Linear);
+	RegisterTest(module, EnlargeInsert_Quad);
+	RegisterTest(module, EnlargeRemove_Linear);
+	RegisterTest(module, EnlargeRemove_Quad);
+	RegisterTest(module, RandomTest_Linear);
+	RegisterTest(module, RandomTest_Quad);
+	RegisterTest(module, ProbeTest_Linear);
+	RegisterTest(module, ProbeTest_Quad);
+
 }
 
 int _tmain(int argc, TCHAR* argv[])

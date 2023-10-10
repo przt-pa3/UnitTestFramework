@@ -7,7 +7,7 @@
 // Framework Check
 DeclareTest(module, FrameworkCheck)
 
-// TBTree Check
+// RBTree Check
 DeclareTest(module, BlackBalance)
 DeclareTest(module, InorderTraversal)
 DeclareTest(module, LeftLean)

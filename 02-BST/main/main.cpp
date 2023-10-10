@@ -1,24 +1,37 @@
 #include "include/BSTTest.hpp"
 
-void SetTestMode(enum TestMode& inTestMode, int& inTestCase, enum PrintMode& inPrintMode, int& inTestTimeLimit)
+void SetTestMode(enum TestMode& inTestMode, int& inTestCase, enum PrintMode& inPrintMode)
 {
 	/*
-		TestMode::FullTest		=>	Test full Cases (No Matter TestCase value)
-		TestMode::SpecificTest	=>	Test Specific Case (Select Case by Modifying TestCase value)
+		(1) Choose TestMode
+
+		TestMode::Full				=>	Do UnitTest using full Cases (No Matter TestCase value)
+
+		TestMode::Specific			=>	Test Specific Case (Select Case by Modifying TestCase value)
+
+		TestMode::RunTestFunction	=>	Don't use Test Case, just call TestFunction()
+
+		(1-*) If you chose TestMode::Specific in (1)  - Choose Specific Case Number
+
 									inTestCase = 1	=> Do First Test Case
 									inTestCase = 2	=> Do Second Test Case
-		TestMode::OnlyTestFunc	=>	Don't use Test Case, just call TestFunction()
+									...
 
-		PrintMode::EveryCase	=>	Print Pass/Fail of Every Requirement of Specific Unit Test Case
-		PrintMode::TotalCase	=>	Print Pass/Fail of Unit Test Case Only
+		(2) Choose PrintMode
 
-		inTestTimeLimit			=>	Time Limit per Process (Test Case) [ms]
+		PrintMode::EveryCase		=>	Print Pass/Fail of Every Requirement of Specific Unit Test Case
+		PrintMode::Summary			=>	Print Pass/Fail of Unit Test Case Only
+
 	*/
 
-	inTestMode = TestMode::FullTest;
+	// (1) Choose TestMode
+	inTestMode = TestMode::Full;
+
+	// (1-*) Choose Specific Case Number
 	inTestCase = 1;
-	inPrintMode = PrintMode::TotalCase;
-	inTestTimeLimit = 10000;				// [ms]
+
+	// (2) Choose PrintMode
+	inPrintMode = PrintMode::Summary;
 }
 
 void TestFunction()
@@ -37,15 +50,17 @@ void TestFunction()
 	================================================================================
 */
 
-void SetFileAndTestName(std::string& ExeFileName, std::string& TestName)
+void SetFileAndTestName(std::string& ExeFileName, std::string& TestName, int& inTestTimeLimit)
 {
 	/*
 		1) Set EXE_FILE_NAME as your project name
 		2) Choose Test Mode by Modifying TestMode Variable
+		3) Set Time Limit
 	*/
 
 	ExeFileName = "02-BST.exe";
 	TestName = "BST";
+	inTestTimeLimit = 10000;
 }
 
 void RegisterTests()
@@ -63,20 +78,21 @@ int _tmain(int argc, TCHAR* argv[])
 {
 	std::string EXE_FILE_NAME;
 	std::string THIS_TEST_NAME;
-	SetFileAndTestName(EXE_FILE_NAME, THIS_TEST_NAME);
+	int TEST_TIMELIMIT = 10000;
+
+	SetFileAndTestName(EXE_FILE_NAME, THIS_TEST_NAME, TEST_TIMELIMIT);
 
 	UnitTest::getInstance().setExeName(EXE_FILE_NAME);
 	UnitTest::getInstance().setTestName(THIS_TEST_NAME);
-
-	enum TestMode TEST_MODE = TestMode::FullTest;
-	int TEST_CASE = 0;
-	enum PrintMode PRINT_MODE = PrintMode::TotalCase;
-	int TEST_TIMELIMIT = 10000;
-
-
-	SetTestMode(TEST_MODE, TEST_CASE, PRINT_MODE, TEST_TIMELIMIT);
-	UnitTest::getInstance().setPrintMode(PRINT_MODE);
 	UnitTest::getInstance().setTimeLimit(TEST_TIMELIMIT);
+
+	enum TestMode TEST_MODE = TestMode::Full;
+	int TEST_CASE = 0;
+	enum PrintMode PRINT_MODE = PrintMode::Summary;
+
+
+	SetTestMode(TEST_MODE, TEST_CASE, PRINT_MODE);
+	UnitTest::getInstance().setPrintMode(PRINT_MODE);
 
 	if (TEST_MODE == 2)
 	{

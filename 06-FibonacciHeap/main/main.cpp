@@ -1,4 +1,4 @@
-#include "include/BTreeTest.hpp"
+#include "include/FHeapTest.hpp"
 
 void SetTestMode(enum TestMode& inTestMode, int& inTestCase, enum PrintMode& inPrintMode)
 {
@@ -58,8 +58,8 @@ void SetFileAndTestName(std::string& ExeFileName, std::string& TestName, int& in
 		3) Set Time Limit
 	*/
 
-	ExeFileName = "03-BTree.exe";
-	TestName = "BTree";
+	ExeFileName = "06-FibonacciHeap.exe";
+	TestName = "Fibonacci Heap";
 	inTestTimeLimit = 10000;
 }
 
@@ -68,14 +68,13 @@ void RegisterTests()
 	// Framework Check
 	RegisterTest(module, FrameworkCheck);
 
-	// BTree Check
-	RegisterTest(module, 2_4_InorderTraversal);
-	RegisterTest(module, InorderTraversal);
-	RegisterTest(module, NodeUtilization);
-	RegisterTest(module, PerfectBalance);
-	RegisterTest(module, Delete);
-	RegisterTest(module, TraversalAfterDeletion);
-	RegisterTest(module, NodeUtilizationAfterDeletion);
+	// FibonacciHeap Check
+	RegisterTest(module, Construction);
+	RegisterTest(module, Insertion);
+	RegisterTest(module, SImpleExtraction);
+	RegisterTest(module, RandomTest);
+
+
 }
 
 int _tmain(int argc, TCHAR* argv[])
@@ -97,7 +96,6 @@ int _tmain(int argc, TCHAR* argv[])
 
 	SetTestMode(TEST_MODE, TEST_CASE, PRINT_MODE);
 	UnitTest::getInstance().setPrintMode(PRINT_MODE);
-
 	if (TEST_MODE == 2)
 	{
 		_CrtMemState sOld;

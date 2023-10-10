@@ -23,7 +23,6 @@ const std::string TCHARToString(const TCHAR* ptsz)
 }
 
 BOOL RunProcess(std::string& sExeName, int testNum) {
-
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
 	DWORD exit_code;
@@ -195,7 +194,7 @@ void UnitTest::setPrintMode(PrintMode inPrintMode)
 	{
 		PrintEveryCase = true;
 	}
-	else if (inPrintMode == PrintMode::TotalCase)
+	else if (inPrintMode == PrintMode::Summary)
 	{
 		PrintEveryCase = false;
 	}

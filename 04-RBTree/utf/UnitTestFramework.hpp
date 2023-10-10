@@ -19,14 +19,14 @@ void PrintTestCaseResult(int TestCaseNum, bool TestCaseResult);
 
 enum TestMode
 {
-	FullTest = 0,
-	SpecificTest,
-	OnlyTestFunction
+	Full = 0,
+	Specific,
+	RunTestFunction
 };
 
 enum PrintMode
 {
-	TotalCase = 0,
+	Summary = 0,
 	EveryCase
 };
 

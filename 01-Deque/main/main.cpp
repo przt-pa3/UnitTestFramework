@@ -45,7 +45,7 @@ void SetFileAndTestName(std::string& ExeFileName, std::string& TestName)
 	*/
 
 	ExeFileName = "01-Deque.exe";
-	TestName = "Deque;";
+	TestName = "Deque";
 }
 
 void RegisterTests()

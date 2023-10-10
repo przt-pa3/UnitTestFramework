@@ -1,12 +1,19 @@
 #include "utf/UnitTestFramework.hpp"
-#include "test/BST.hpp"
+#include "test/BTree.hpp"
 #include <random>
-#include <deque>
+#include <vector>
+#include <algorithm>
+#include <iterator>
+#include <numeric>
 
 // Framework Check
 DeclareTest(module, FrameworkCheck)
 
-// BST Check
-DeclareTest(module, InsertTest)
-DeclareTest(module, SearchTest)
-DeclareTest(module, RemoveTest)
+// BTree Check
+DeclareTest(module, 2_4_InorderTraversal)
+DeclareTest(module, InorderTraversal)
+DeclareTest(module, NodeUtilization)
+DeclareTest(module, PerfectBalance)
+DeclareTest(module, Delete)
+DeclareTest(module, TraversalAfterDeletion)
+DeclareTest(module, NodeUtilizationAfterDeletion)

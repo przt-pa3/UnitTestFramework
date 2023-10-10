@@ -1,4 +1,4 @@
-#include "include/BSTTest.hpp"
+#include "include/BTreeTest.hpp"
 
 void SetTestMode(enum TestMode& inTestMode, int& inTestCase, enum PrintMode& inPrintMode, int& inTestTimeLimit)
 {
@@ -44,8 +44,8 @@ void SetFileAndTestName(std::string& ExeFileName, std::string& TestName)
 		2) Choose Test Mode by Modifying TestMode Variable
 	*/
 
-	ExeFileName = "02-BST.exe";
-	TestName = "BST;";
+	ExeFileName = "03-BTree.exe";
+	TestName = "BTree";
 }
 
 void RegisterTests()
@@ -53,10 +53,14 @@ void RegisterTests()
 	// Framework Check
 	RegisterTest(module, FrameworkCheck);
 
-	// BST Check
-	RegisterTest(module, InsertTest);
-	RegisterTest(module, SearchTest);
-	RegisterTest(module, RemoveTest);
+	// BTree Check
+	RegisterTest(module, 2_4_InorderTraversal);
+	RegisterTest(module, InorderTraversal);
+	RegisterTest(module, NodeUtilization);
+	RegisterTest(module, PerfectBalance);
+	RegisterTest(module, Delete);
+	RegisterTest(module, TraversalAfterDeletion);
+	RegisterTest(module, NodeUtilizationAfterDeletion);
 }
 
 int _tmain(int argc, TCHAR* argv[])

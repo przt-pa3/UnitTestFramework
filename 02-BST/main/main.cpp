@@ -45,7 +45,7 @@ void SetFileAndTestName(std::string& ExeFileName, std::string& TestName)
 	*/
 
 	ExeFileName = "02-BST.exe";
-	TestName = "BST;";
+	TestName = "BST";
 }
 
 void RegisterTests()

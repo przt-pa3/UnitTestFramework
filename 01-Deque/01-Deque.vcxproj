@@ -136,7 +136,9 @@
   <ItemGroup>
     <ClInclude Include="include\DequeTest.hpp" />
     <ClInclude Include="test\Deque.hpp" />
+    <ClInclude Include="test\Deque_answer.hpp" />
     <ClInclude Include="test\Palindrome.hpp" />
+    <ClInclude Include="test\Palindrome_answer.hpp" />
     <ClInclude Include="utf\UnitTestFramework.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

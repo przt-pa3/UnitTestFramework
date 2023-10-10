@@ -26,6 +26,7 @@
   <ItemGroup>
     <ClInclude Include="include\BSTTest.hpp" />
     <ClInclude Include="test\BST.hpp" />
+    <ClInclude Include="test\BST_answer.hpp" />
     <ClInclude Include="utf\UnitTestFramework.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

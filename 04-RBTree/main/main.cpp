@@ -1,4 +1,4 @@
-#include "include/FrameworkTest.hpp"
+#include "include/RBTreeTest.hpp"
 
 void SetTestMode(enum TestMode& inTestMode, int& inTestCase, enum PrintMode& inPrintMode, int& inTestTimeLimit)
 {
@@ -44,17 +44,24 @@ void SetFileAndTestName(std::string& ExeFileName, std::string& TestName)
 		2) Choose Test Mode by Modifying TestMode Variable
 	*/
 
-	ExeFileName = "UnitTestFramework.exe";
-	TestName = "UnitTestFramework";
+	ExeFileName = "04-RBTree.exe";
+	TestName = "RBTree";
 }
 
 void RegisterTests()
 {
-	RegisterTest(module, FrameWorkCheck);
-	RegisterTest(module, FalseCheck);
-	RegisterTest(module, MemLeakCheck);
-	RegisterTest(module, AccessViolationCheck);
-	RegisterTest(module, TimeOutCheck);
+	// Framework Check
+	RegisterTest(module, FrameworkCheck);
+
+	// RBTree Check
+	RegisterTest(module, BlackBalance);
+	RegisterTest(module, InorderTraversal);
+	RegisterTest(module, LeftLean);
+	RegisterTest(module, RemoveMax);
+	RegisterTest(module, RemoveMin);
+	RegisterTest(module, BlackBalanceAfterDeletion);
+	RegisterTest(module, InorderTraversalAfterDeletion);
+
 }
 
 int _tmain(int argc, TCHAR* argv[])

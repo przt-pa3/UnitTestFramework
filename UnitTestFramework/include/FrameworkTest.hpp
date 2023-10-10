@@ -1,5 +1,7 @@
 #include "utf/UnitTestFramework.hpp"
 
-DeclareTest(module, test1)
-DeclareTest(module, test2)
-DeclareTest(module, test3)
+DeclareTest(module, FrameWorkCheck)
+DeclareTest(module, FalseCheck)
+DeclareTest(module, MemLeakCheck)
+DeclareTest(module, AccessViolationCheck)
+DeclareTest(module, TimeOutCheck)

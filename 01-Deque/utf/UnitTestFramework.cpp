@@ -23,7 +23,7 @@ const std::string TCHARToString(const TCHAR* ptsz)
 }
 
 BOOL RunProcess(std::string& sExeName, int testNum) {
-
+	std::cout << "HI" << std::endl;
 	STARTUPINFO si;
 	PROCESS_INFORMATION pi;
 	DWORD exit_code;
@@ -66,12 +66,20 @@ BOOL RunProcess(std::string& sExeName, int testNum) {
 	WaitForSingleObject(pi.hProcess, TimeOut_ms);
 
 	GetExitCodeProcess(pi.hProcess, &exit_code);
-	
 
 	if (exit_code == 1) flag = true;
 	else if (exit_code == 259) {
 		std::cout << std::endl << std::endl;
-		std::cout << "        TIMEOUT!! - Time Limit : " << TimeOut_ms << "(ms)" << std::endl << std::endl;
+		std::cout << "\033[1;31m" << "        TIMEOUT!! " << "\033[0m" << " - Time Limit : " << TimeOut_ms << "(ms)" << std::endl << std::endl;
+	}
+	else if (exit_code == 2 || exit_code == 0) {
+
+	}
+	else {
+		std::cout << std::endl << std::endl;
+		std::cout << "\033[1;31m" <<"           Exception Thrown !!" << "\033[0m" << std::endl;
+		std::cout << "           e.g.) Read Access Violation " << std::endl << std::endl;
+		// std::cout << "exit_code : " << exit_code << std::endl;
 	}
 
 	// Close process and thread handles.   
@@ -268,7 +276,7 @@ bool UnitTest::runTest(TCHAR* t) {
 	std::string s_number = TCHARToString(t);
 	int index = std::stoi(s_number) - 1;
 	std::advance(iter, index);
-		
+
 	(*iter)->runFunc();
 	if ((*iter)->isTrue) { // pass
 		return true;

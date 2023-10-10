@@ -67,11 +67,19 @@ BOOL RunProcess(std::string& sExeName, int testNum) {
 
 	GetExitCodeProcess(pi.hProcess, &exit_code);
 
-
 	if (exit_code == 1) flag = true;
 	else if (exit_code == 259) {
 		std::cout << std::endl << std::endl;
-		std::cout << "        TIMEOUT!! - Time Limit : " << TimeOut_ms << "(ms)" << std::endl << std::endl;
+		std::cout << "\033[1;31m" << "        TIMEOUT!! " << "\033[0m" << " - Time Limit : " << TimeOut_ms << "(ms)" << std::endl << std::endl;
+	}
+	else if (exit_code == 2 || exit_code == 0) {
+
+	}
+	else {
+		std::cout << std::endl << std::endl;
+		std::cout << "\033[1;31m" <<"           Exception Thrown !!" << "\033[0m" << std::endl;
+		std::cout << "           e.g.) Read Access Violation " << std::endl << std::endl;
+		// std::cout << "exit_code : " << exit_code << std::endl;
 	}
 
 	// Close process and thread handles.   

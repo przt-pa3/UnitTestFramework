@@ -1,10 +1,10 @@
 #include "include/FrameworkTest.hpp"
 
-DefineTest(module, test1) {
+DefineTest(module, FrameWorkCheck) {
 	expectTrue(1 + 1 == 2);
 }
 
-DefineTest(module, test2) {
+DefineTest(module, FalseCheck) {
 
 	int* a = new int;
 	delete a;
@@ -15,8 +15,29 @@ DefineTest(module, test2) {
 
 }
 
-DefineTest(module, test3)
+DefineTest(module, MemLeakCheck)
 {
 	int* a = new int;
 	expectTrue(1 + 1 == 2);
 }
+
+DefineTest(module, AccessViolationCheck)
+{
+	expectTrue(true);
+
+	int* a = nullptr;
+	(*a)++;
+}
+
+DefineTest(module, TimeOutCheck)
+{
+	expectTrue(true);
+
+	while (1)
+	{
+
+	}
+
+	expectTrue(true);
+}
+

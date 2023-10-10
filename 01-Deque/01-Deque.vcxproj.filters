@@ -29,9 +29,6 @@
     <ClInclude Include="include\DequeTest.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="utf\UnitTestFramework.hpp">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="test\Deque.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -42,6 +39,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="test\Palindrome_answer.hpp">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="utf\UnitTestFramework.hpp">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

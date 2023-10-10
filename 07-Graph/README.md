@@ -121,7 +121,7 @@ Your task is to implement the function `topological_sort()` in
 * This function returns a vector, having a sorted sequence of vertex
   ids.
 
-## Reference
+## References
 
 * Test Cases  
 SNU Course "Introduction to Data Structures" (Crs. No. 430.217)  

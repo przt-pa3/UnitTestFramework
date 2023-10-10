@@ -259,7 +259,7 @@ This class has the following functions:
 * `void consolidate()` : Consolidate the root list of the heap.
 * `void merge(std::shared_ptr<FibonacciNode<T>>& x, std::shared_ptr<FibonacciNode<T>>& y)` : Make `y` as a child of `x`. You will accordingly need to change the degree of `x`.
 
-## Reference
+## References
 
 * Test Cases  
 SNU Course "Introduction to Data Structures" (Crs. No. 430.217)  

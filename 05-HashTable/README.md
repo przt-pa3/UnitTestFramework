@@ -207,7 +207,7 @@ You will need to implement such a dynamically growing feature in
 factor after every `HashTable::put()` operation, which invokes
 `HashTable::enlarge_table()` if needed.
 
-## Reference
+## References
 
 * Test Cases  
 SNU Course "Introduction to Data Structures" (Crs. No. 430.217)  
